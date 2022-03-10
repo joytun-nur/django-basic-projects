@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    {%  for quot in object_list %}
+
+      <div class="card">
+        <div class="card-header">
+          {{quot.QuoteCategory.title}}
+        </div>
+        <div class="card-body">
+            <figure>
+                <blockquote class="blockquote">
+                  <p> {{ quot.quote }}</p>
+                </blockquote>
+                <figcaption class="blockquote-footer">
+                     <cite title="Source Title"> {{ quot.author }} </cite>
+                </figcaption>
+              </figure>
+        </div>
+      </div>
+      <br>
+      {% endfor %}
+
+</div>
+{% endblock %}
